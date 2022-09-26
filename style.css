@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito Sans|Quicksand');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@font-face {
+    font-family: 'title';
+    src: url('_fonts/BBCReithSerif_Bd.ttf')              /* Legacy iOS */
+}
+@font-face {
+    font-family: 'byline';
+    src: url('_fonts/BBCReithSerif_Lt.ttf')              /* Legacy iOS */
+}
+@font-face {
+    font-family: 'main';
+    src: url('_fonts/BBCReithSans_Lt.ttf')              /* Legacy iOS */
+}
+@font-face {
+    font-family: 'subh';
+    src: url('_fonts/BBCReithSans_Bd.ttf')              /* Legacy iOS */
+}
+/*  
+    COLOUR PALETTE:
+    
+    #000000 - Black
+    #1C1C1C - Nero
+    #4A4A4A - Charcoal
+    #E6E6E6 - Gainsboro
+    #ffffff - White
+*/
+
+span {
+    font-family: 'Nunito Sans';
+}
+
+html {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    background-color: #000000;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 50px 0 0 0;
+}
+
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeouthalf { 0% { opacity: 1; } 50% {opacity: 0.45;} 100% { opacity: 0.3; } }
+
+.navbar{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    opacity: 95%;
+    animation: fadein 3s;
+    border:1px solid #E6E6E6;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+    background-color: #1C1C1C;
+}
+.navbar li{
+    display:inline;
+}
+.navbar a{
+    padding:10px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+.navbar a:hover, .sidenavbar li:hover{
+    background-color: #4A4A4A;
+}
+
+.container{
+    top: -110px; /* CONFIGURABLE */
+    height: calc(100vh + 110px); /* CONFIGURABLE */
+    left: 0;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -2;
+    position: absolute;
+}
+.center {
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h1 {
+    font-weight: bold;
+}
+p {
+    overflow-wrap: break-word;
+}
+h1, h2, h3, h4, p, a {
+    color: #ffffff;
+}
+
+#body {
+    padding: 3%;
+}
+#body {
+    font-family: 'Quicksand';
+}
+.news-heading {
+  padding:0%;
+  font-family: 'title';
+  font-size:400%;
+}
+.byline {
+    font-family: 'byline';
+}
+.subhead {
+    font-family: 'subh';
+}
+.article {
+    /* normal body text */
+    font-family: 'main';
+}

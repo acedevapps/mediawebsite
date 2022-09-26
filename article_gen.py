@@ -17,8 +17,11 @@ imagehrefs is list of links to images and position will be
 b=""
 articlebody = ""
 os.system("cd news;mkdir "+str(today.year)+";cd "+str(today.year)+";mkdir "+str(today.month)+";cd "+str(today.month)+";mkdir " + headline.lower().replace(" ","-")+f';cd {headline.lower().replace(" ","-")};> index.html')
-
-articlebody+=f'<h2 class="news-heading">{headline}</h2><p class="byline"><strong>{author}</strong> • {today.strftime("%d %b %Y")}</p>'
+articlebody="""<head>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="/import-head.js"></script>
+</head>"""
+articlebody+=f'<div id="body"><h2 class="news-heading">{headline}</h2><p class="byline"><strong>{author}</strong> • {today.strftime("%d %b %Y")}</p><hr>'
 sub = False
 im = 0
 for i in bodysections:
@@ -32,7 +35,8 @@ for i in bodysections:
     sub=False
   else:
     articlebody+=f'<p class="article">{i}</p>'
-    
+
+articlebody+="</div>"
 f = open(f'news/{today.year}/{today.month}/{headline.lower().replace(" ","-")}/index.html', "w")
 f.write(articlebody)
 f.close()
